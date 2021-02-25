@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg sticky-top navbar-toggleable-sm">
+    <img class="logo-history img-fluid" src="assets/icons/coso.png" alt="logo" />
+
+    <section class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto text-center ml-4">
+            <li class="nav-item active">
+                <a [routerLink]="['/home']" routerLinkActive="router-link-active" class="nav-link" href="#">Home </a>
+            </li>
+            <li class="nav-item">
+                <a [routerLink]="['/characters']" routerLinkActive="router-link-active" class="nav-link" href="#">Characters of History</a>
+            </li>
+            <li class="nav-item">
+                <a [routerLink]="['/contact']" routerLinkActive="router-link-active" class="nav-link" href="#">Contact Us</a>
+            </li>
+            <li class="nav-item">
+                <a [routerLink]="['/dashboard']" routerLinkActive="router-link-active" class="nav-link" href="#">Dashboard</a>
+            </li>
+        </ul>
+
+        <article class="login d-flex flex-row justify-content-center mt-4">
+            <section class="icon-details">
+                <a id="login2" class="nav-link" href="#">
+                    <img src="assets/icons/salir.svg" alt="logout" width="35px">
+                </a>
+                <p id="text2">Logout</p>
+            </section>
+        </article>
+    </section>
+</nav>
