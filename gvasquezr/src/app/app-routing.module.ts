@@ -10,18 +10,19 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AuthGuard } from './guargs/auth.guard';
 
 const routes: Routes = [
-  {path: '',          component: IndexComponent},
-  {path: 'menu',      component: MenuComponent},
-  {path: 'home',      component: HomeComponent},
-  {path: 'carousel',  component: CarouselComponent},
-  {path: 'history',   component: HistoryComponent},
-  {path: 'characters',component: CharactersComponent},
-  {path: 'contact',   component: ContactComponent},
-  {path: 'footer',    component: FooterComponent},
-  {path: 'login',     component: LoginComponent},
-  {path: 'dashboard', component: DashboardComponent},
+  { path: '',          component: IndexComponent },
+  { path: 'login',     component: LoginComponent },
+  { path: 'menu',      component: MenuComponent,       canActivate:[AuthGuard] },
+  { path: 'home',      component: HomeComponent,       canActivate:[AuthGuard] },
+  { path: 'carousel',  component: CarouselComponent,   canActivate:[AuthGuard] },
+  { path: 'history',   component: HistoryComponent,    canActivate:[AuthGuard] },
+  { path: 'characters',component: CharactersComponent, canActivate:[AuthGuard] },
+  { path: 'contact',   component: ContactComponent,    canActivate:[AuthGuard] },
+  { path: 'footer',    component: FooterComponent,     canActivate:[AuthGuard] },
+  { path: 'dashboard', component: DashboardComponent,  canActivate:[AuthGuard] },
 ];
 
 @NgModule({

@@ -1,4 +1,6 @@
 .imagenFooter {
-    height: 50px;
-    width: 50px;
+    height: 25px;
+    width: 25px;
+    background-color: cornflowerblue;
+    box-shadow: 2px 2px 4px rgba(.05, .05, .05, .05);
 }

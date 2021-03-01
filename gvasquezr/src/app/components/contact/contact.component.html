@@ -1,27 +1,36 @@
 <app-menu></app-menu>
 <div class="container pt-5">
     <h1>Contact Us</h1>
+    <p>Para contactarnos por favor diligencie el siguiente formulario:</p>
     <div class="card p-4">
-        <form ngNativeValidate (ngSubmit)='enviar()'>
-            <div class="mb-3">
-                <label for="inputNombre" class="form-label">Nombre</label>
-                <input type="text" name="contactNombre" [(ngModel)]="contactInfo.nombre" class="form-control" id="inputNombre" required/>
-            </div>
-            <div class="mb-3">
-                <label for="inputCorreo" class="form-label">Correo Electrónico</label>
-                <input type="email" name="contactCorreo" [(ngModel)]="contactInfo.correo" class="form-control" id="inputCorreo" required/>
-            </div>
-            <div class="mb-3">
-                <label for="inputCelular" class="form-label">Celular</label>
-                <input type="number" name="contactCelular" [(ngModel)]="contactInfo.celular" class="form-control" id="inputCelular" required/>
-            </div>
-            <div class="mb-3">
-                <label for="inputMensaje" class="form-label">Mensaje</label>
-                <input type="text" name="contactMensaje" [(ngModel)]="contactInfo.mensaje" class="form-control" id="inputMensaje" required/>
-            </div>
-            <button type="submit" class="btn btn-primary mr-2">Enviar</button>
-            
-            <button type="reset" (click)='limpiar()' class="btn btn-primary">Limpiar</button>
+        <form ngNativeValidate (ngSubmit)='enviar()' [formGroup]="formContact">
+            <section class="form-group">
+                <div class="mb-3">
+                    <label for="inputNombre" class="form-label">Nombre</label>
+                    <input type="text" formControlName="nombre" class="form-control" id="inputNombre" required/>
+                </div>
+            </section>
+            <section class="form-group">
+                <div class="mb-3">
+                    <label for="inputCorreo" class="form-label">Correo Electrónico</label>
+                    <input type="email" formControlName="correo" class="form-control" id="inputCorreo" readonly/>
+                </div>
+            </section>
+            <section class="form-group">
+                <div class="mb-3">
+                    <label for="inputCelular" class="form-label">Celular</label>
+                    <input type="number" formControlName="celular" class="form-control" id="inputCelular" required maxlength="10"/>
+                </div>
+            </section>
+            <section class="form-group">
+                <div class="mb-3">
+                    <label for="inputMensaje" class="form-label">Mensaje</label>
+                    <input type="text" formControlName="mensaje" class="form-control" id="inputMensaje" required/>
+                </div>
+            </section>
+            <section class="form-group">
+                <button type="submit" class="btn btn-primary mr-2" [disabled]="!formContact.valid">Enviar</button>
+            </section>
         </form>
     </div>
 </div>
